@@ -1,0 +1,23 @@
+{
+    "globals": {
+        "ts-jest": {
+            "diagnostics": false,
+            "isolatedModules": true
+        }
+    },
+    "roots": ["<rootDir>"],
+    "preset": "ts-jest",
+    "moduleFileExtensions": ["js", "json", "ts"],
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": ["/dist/", "/node_modules/"],
+    "testRegex": "\\.tests\\.ts$",
+    "reporters": [
+        "default",
+        [
+            "./dist",
+            {
+                "my-custom-options": "ABCD"
+            }
+        ]
+    ]
+}
