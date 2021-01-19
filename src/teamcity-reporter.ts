@@ -1,17 +1,7 @@
-import {
-    Context,
-    Reporter,
-    Test,
-    ReporterOnStartOptions,
-} from "@jest/reporters";
-import {
-    TestResult,
-    AggregatedResult,
-} from "@jest/test-result";
+import { Reporter, Test } from "@jest/reporters";
+import { TestResult } from "@jest/test-result";
 import { Config } from "@jest/types";
 import path from "path";
-
-export interface TeamCityReporterOptions {}
 
 /**
  * A Jest reporter class for TeamCity.
@@ -19,25 +9,23 @@ export interface TeamCityReporterOptions {}
  * @implements {Reporter}
  */
 export class TeamCityReporter implements Reporter {
-    constructor(
-        public globalConfig: Config.GlobalConfig,
-        private _options: TeamCityReporterOptions
-    ) {}
+    constructor(public globalConfig: Config.GlobalConfig) {}
 
     /**
      * Can be used to force Jest to exit with non-0 code by returning an Error.
      */
-    getLastError(): void {}
+    getLastError(): void {
+        return;
+    }
 
     /**
      * Called at the very beginning of a test run (before any tests have started).
      *
      * Not currently used as we report tests in `onTestResult`.
      */
-    onRunStart(
-        _results: AggregatedResult,
-        _options: ReporterOnStartOptions
-    ): void {}
+    onRunStart(): void {
+        return;
+    }
 
     /**
      * Called after all tests have completed.
@@ -45,7 +33,9 @@ export class TeamCityReporter implements Reporter {
      * Not currently used as we report tests in `onTestResult`.
      * Could be used in the future for coverage reporting.
      */
-    onRunComplete(_contexts: Set<Context>, _results: AggregatedResult) {}
+    onRunComplete(): void {
+        return;
+    }
 
     /**
      * Called at the beginning of every test file (also known as test suite).
@@ -53,7 +43,9 @@ export class TeamCityReporter implements Reporter {
      * Not currently used as we report tests in `onTestResult` where we
      * have access to the full test name (and not just the file name).
      */
-    onTestStart(_test: Test) {}
+    onTestStart(): void {
+        return;
+    }
 
     /**
      * Called with the result of every test file (also known as test suite).
@@ -63,30 +55,22 @@ export class TeamCityReporter implements Reporter {
      * @param {AggregatedResult} results
      * @memberof TeamCityReporter
      */
-    onTestResult(
-        test: Test,
-        testResult: TestResult,
-        _results: AggregatedResult
-    ) {
+    onTestResult(test: Test, testResult: TestResult): void {
         const testFile = path.relative(test.context.config.rootDir, test.path);
         console.log(`##teamcity[testSuiteStarted name='${testFile}']`);
 
-        testResult.testResults.forEach((result) => {
+        testResult.testResults.forEach(result => {
             console.log(`##teamcity[testStarted name='${result.fullName}']`);
 
             switch (result.status) {
                 case "skipped":
-                    console.log(
-                        `##teamcity[testIgnored name='${result.fullName}']`
-                    );
+                    console.log(`##teamcity[testIgnored name='${result.fullName}']`);
                     break;
             }
 
             // <here go all the test service messages with the same name>
 
-            console.log(
-                `##teamcity[testFinished name='${result.fullName}' duration='${result.duration}']`
-            );
+            console.log(`##teamcity[testFinished name='${result.fullName}' duration='${result.duration}']`);
         });
 
         console.log(`##teamcity[testSuiteFinished name='${testFile}']`);

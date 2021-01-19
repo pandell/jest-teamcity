@@ -1,0 +1,5 @@
+# output directories
+dist/**
+
+# not-our-code
+node_modules/**
