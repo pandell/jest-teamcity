@@ -49,11 +49,6 @@ export class TeamCityReporter implements Reporter {
 
     /**
      * Called with the result of every test file (also known as test suite).
-     *
-     * @param {Test} test
-     * @param {TestResult} testResult
-     * @param {AggregatedResult} results
-     * @memberof TeamCityReporter
      */
     onTestResult(test: Test, testResult: TestResult): void {
         const testFile = path.relative(test.context.config.rootDir, test.path);
