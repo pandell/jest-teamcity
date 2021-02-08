@@ -12,10 +12,7 @@ export function escapeForTeamCity(stringToEscape: string): string {
         .replace(/'/g, "|'")
         .replace(/\n/g, "|n")
         .replace(/\r/g, "|r")
-        .replace(
-            /\u(?<codePoint>\d+)/g,
-            (_s, codePoint) => `|${String.fromCodePoint((codePoint as unknown) as number)}`
-        )
+        .replace(/\u(?<codePoint>\d+)/g, (_s, codePoint) => `|0x${codePoint}`)
         .replace(/\|/g, "||")
         .replace(/\[/g, "|[")
         .replace(/\]/g, "|]");
