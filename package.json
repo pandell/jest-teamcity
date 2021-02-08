@@ -1,11 +1,32 @@
 {
-  "name": "jest-teamcity",
+  "name": "@pandell/jest-teamcity",
   "version": "1.0.0",
   "description": "Reporter for Jest that outputs TeamCity annotations",
-  "author": "amaechler <amaechler@gmail.com>",
+  "keywords": [
+    "jest",
+    "reporter",
+    "teamcity",
+    "typescript"
+  ],
+  "homepage": "https://github.com/pandell/jest-teamcity",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pandell/jest-teamcity"
+  },
   "license": "MIT",
-  "main": "dist/bundle.js",
+  "author": "Andreas Maechler <amaechler@gmail.com>",
   "sideEffects": false,
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "tsc",
+    "bundle": "webpack --mode=production",
+    "fix": "prettier \"**/*.{js,json,ts}\" --write",
+    "format": "prettier \"**/*.{js,json,ts}\" --check",
+    "lint": "eslint --max-warnings 0 --ext \".js,.ts\" --cache .",
+    "test": "yarn build && jest",
+    "verify": "yarn build && yarn test && yarn lint && yarn format",
+    "watch": "tsc --watch"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.0",
     "@types/node": "^14.0.0",
@@ -23,14 +44,7 @@
     "webpack": "^5.0.0",
     "webpack-cli": "^4.0.0"
   },
-  "scripts": {
-    "build": "tsc",
-    "bundle": "webpack --mode=production",
-    "fix": "prettier \"**/*.{js,json,ts}\" --write",
-    "format": "prettier \"**/*.{js,json,ts}\" --check",
-    "lint": "eslint --max-warnings 0 --ext \".js,.ts\" --cache .",
-    "test": "yarn build && jest",
-    "verify": "yarn build && yarn test && yarn lint && yarn format",
-    "watch": "tsc --watch"
+  "publishConfig": {
+    "access": "public"
   }
 }
