@@ -1,7 +1,7 @@
 {
   "name": "@pandell/jest-teamcity",
   "version": "1.0.0",
-  "description": "Reporter for Jest that outputs TeamCity annotations",
+  "description": "Modern Jest Test Result Processor for TeamCity",
   "keywords": [
     "jest",
     "reporter",
@@ -14,7 +14,16 @@
     "url": "https://github.com/pandell/jest-teamcity"
   },
   "license": "MIT",
-  "author": "Andreas Maechler <amaechler@gmail.com>",
+  "author": {
+    "name": "Pandell Technology",
+    "url": "http://pandell.com/"
+  },
+  "contributors": [
+    {
+      "name": "Andreas Maechler",
+      "url": "https://github.com/amaechler"
+    }
+  ],
   "sideEffects": false,
   "main": "dist/bundle.js",
   "scripts": {

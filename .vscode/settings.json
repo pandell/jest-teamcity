@@ -21,5 +21,9 @@
   "eslint.validate": ["javascript", "typescript"],
 
   // spell-checking extension settings
-  "cSpell.words": ["mockdata"]
+  "cSpell.words": [
+    "mockdata",
+    "pandell",
+    "teamcity"
+  ]
 }
