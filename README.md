@@ -18,4 +18,6 @@ yarn test
 
 ## Create a Release
 
-TODO
+```sh
+gh release create v1.2.3
+```
