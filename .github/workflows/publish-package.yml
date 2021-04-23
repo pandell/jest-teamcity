@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish a package on a new release
 on:
   release:
     types: [created]
@@ -17,7 +17,7 @@ jobs:
         registry-url: 'https://npm.pkg.github.com'
         # Defaults to the user or organization that owns the workflow file
         scope: '@pandell'
-    - run: yarn
+    - run: yarn bundle
     - run: yarn publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
