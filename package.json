@@ -28,8 +28,9 @@
   "main": "dist/bundle.js",
   "scripts": {
     "build": "tsc",
-    "bundle": "webpack --mode=production",
-    "fix": "prettier \"**/*.{js,json,ts}\" --write",
+    "bundle": "yarn clobber && yarn && webpack --mode=production",
+    "clobber": "git -c core.longpaths=true clean -dfx",
+    "format-fix": "prettier \"**/*.{js,json,ts}\" --write",
     "format": "prettier \"**/*.{js,json,ts}\" --check",
     "lint": "eslint --max-warnings 0 --ext \".js,.ts\" --cache .",
     "postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\"",
