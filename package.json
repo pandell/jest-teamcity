@@ -32,6 +32,9 @@
     }
   },
   "module": "./dist/index.js",
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "build": "yarn build:prod",
     "build:dev": "tsc && node ./scripts/build.mjs",
