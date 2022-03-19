@@ -54,6 +54,7 @@ export const testGlobalConfig: Config.GlobalConfig = {
     ],
     rootDir: "/jest-teamcity",
     runTestsByPath: false,
+    snapshotFormat: {},
     skipFilter: false,
     testFailureExitCode: 1,
     testPathPattern: "",
