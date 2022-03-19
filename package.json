@@ -43,8 +43,8 @@
     "format": "prettier \"**/*.{js,json,ts}\" --check",
     "format:fix": "prettier \"**/*.{js,json,ts}\" --write",
     "lint": "eslint --max-warnings 0 --ext \".js,.ts\" --cache .",
-    "test": "jest",
-    "verify": "yarn build && yarn test && yarn lint && yarn format",
+    "test": "yarn build && jest",
+    "verify": "yarn test && yarn lint && yarn format",
     "postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\"",
     "watch": "tsc --watch"
   },
