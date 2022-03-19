@@ -24,17 +24,21 @@
 *.htm         text diff=html
 *.html        text diff=html
 *.js          text
+*.jsx         text
 *.json        text
+*.jsonc       text
 *.Master      text
-*.md          text
+*.md          text diff=markdown
 *.mrt         text
 *.proj        text
-*.ps1         text
 *.rdlc        text
 *.resx        text
 *.settings    text
+*.sln         text
 *.sql         text
 *.targets     text
+*.ts          text
+*.tsx         text
 *.tt          text
 *.txt         text
 *.vbs         text
@@ -43,14 +47,15 @@
 *.xslt        text
 
 # Text files with forced crlf
-*.DotSettings text eol=crlf
-*.FxCop       text eol=crlf
-*.sln         text eol=crlf
+*.bat         text eol=crlf
+*.cmd         text eol=crlf
 
 # Text files with forced lf
+*.DotSettings text eol=lf
+*.ps1         text eol=lf
+*.sh          text eol=lf
 package.json  text eol=lf
 yarn.lock     text eol=lf
-*.snap        text eol=lf
 
 # Binary files (left alone)
 *.bmp         binary
@@ -64,4 +69,5 @@ yarn.lock     text eol=lf
 *.psd         binary
 *.snk         binary
 *.vsd         binary
+*.xlsb        binary
 *.xlsx        binary

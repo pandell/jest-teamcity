@@ -1,0 +1,42 @@
+{
+  "runner": "terminal",
+  "version": "2.0.0",
+  "echoCommand": true,
+  "tasks": [
+    {
+      "label": "Typescript Watcher",
+      "command": "node",
+      "args": ["${workspaceRoot}/node_modules/typescript/bin/tsc", "--watch"],
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": ["$tsc-watch"],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "ESLint",
+      "type": "npm",
+      "script": "lint",
+      "isBackground": false,
+      "problemMatcher": ["$eslint-stylish"],
+      "presentation": {
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Jest",
+      "type": "npm",
+      "script": "test",
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": {
+        "focus": true,
+        "clear": true
+      }
+    }
+  ]
+}

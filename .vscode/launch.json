@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test current file (jest)",
+      "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
+      "args": ["--runInBand", "--testPathPattern=${fileBasenameNoExtension}"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
