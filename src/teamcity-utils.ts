@@ -9,11 +9,11 @@ export function escapeForTeamCity(stringToEscape: string): string {
     }
 
     return stringToEscape
-        .replace(/'/g, "|'")
+        .replace(/\|/g, "||")
         .replace(/\n/g, "|n")
         .replace(/\r/g, "|r")
-        .replace(/\u(?<codePoint>\d+)/g, (_s, codePoint) => `|0x${codePoint}`)
-        .replace(/\|/g, "||")
         .replace(/\[/g, "|[")
-        .replace(/\]/g, "|]");
+        .replace(/\]/g, "|]")
+        .replace(/\u(?<codePoint>\d+)/g, (_s, codePoint) => `|0x${codePoint}`)
+        .replace(/'/g, "|'");
 }
