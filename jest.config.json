@@ -1,8 +1,7 @@
 {
   "globals": {
     "ts-jest": {
-      "diagnostics": false,
-      "isolatedModules": true
+      "diagnostics": false
     }
   },
   "roots": ["<rootDir>"],
@@ -14,7 +13,7 @@
   "reporters": [
     "default",
     [
-      "./dist",
+      "./dist/index.js",
       {
         "my-custom-options": "ABCD"
       }

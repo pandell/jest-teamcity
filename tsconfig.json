@@ -2,12 +2,8 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "strict": true,
-    "target": "es6",
-
-    "outDir": "./dist"
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": ["src/*.ts"]
 }
