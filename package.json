@@ -45,7 +45,6 @@
     "lint": "eslint --max-warnings 0 --ext \".js,.ts\" --cache .",
     "test": "yarn build && jest",
     "verify": "yarn test && yarn lint && yarn format",
-    "postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\"",
     "watch": "tsc --watch"
   },
   "devDependencies": {
