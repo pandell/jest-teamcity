@@ -35,7 +35,7 @@ jobs:
     - run: yarn
     - run: yarn build
     # workaround to reset registry in temp npmrc file
-    - run: echo "registry=https://www.myget.org/F/pandell-npm/npm/" >> .npmrc
+    # - run: echo "registry=https://www.myget.org/F/pandell-npm/npm/" >> .npmrc
     - run: yarn publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.MYGET_TOKEN }}
