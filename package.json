@@ -1,6 +1,6 @@
 {
   "name": "@pandell/jest-teamcity",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "Modern Jest Test Result Processor for TeamCity",
   "keywords": [
     "jest",
