@@ -20,10 +20,12 @@ Add a reporter to the Jest configuration file or the `package.json`. For details
 // `jest.config.js`
 module.export = {
     ...
-    reporters: ["@pandell/jest-teamcity"]
+    reporters: process.env.TEAMCITY_VERSION ? ["@pandell/jest-teamcity"] : ["default"],
     ...
 }
 ```
+
+The above configuration uses the custom `@pandell/jest-teamcity` report if the `TEAMCITY_VERSION` environment variable is set (as is always the case for a TeamCity agent), and uses the default reporter otherwise, resulting in a nice local development experience.
 
 ## Jest terminology
 
@@ -39,7 +41,7 @@ module.export = {
 
 See the [Jest documentation](https://jestjs.io/docs/configuration#reporters-arraymodulename--modulename-options) for more details.
 
-When using `@pandell/jest-teamcity`, we recommend to replace the [default reporter](https://github.com/facebook/jest/blob/main/packages/jest-reporters/src/DefaultReporter.ts) so that only TeamCity service messages are written to the standard output. The default Jest reporter is overridden automatically if only specifying `@pandell/jest-teamcity` as a custom reporter (see [#how-to-use](#how-to-use)).
+When using `@pandell/jest-teamcity`, we recommend replacing the [default reporter](https://github.com/facebook/jest/blob/main/packages/jest-reporters/src/DefaultReporter.ts) so that only TeamCity service messages are written to the standard output. The default Jest reporter is overridden automatically if only specifying `@pandell/jest-teamcity` as a custom reporter (see [#how-to-use](#how-to-use)).
 
 ### Jest Test Result Processors
 
