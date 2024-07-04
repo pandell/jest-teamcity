@@ -23,6 +23,7 @@ Received: 2`;
 export const testGlobalConfig: Config.GlobalConfig = {
     bail: 0,
     changedFilesWithAncestor: false,
+    ci: false,
     collectCoverage: false,
     collectCoverageFrom: [],
     coverageDirectory: "/jest-teamcity/coverage",
@@ -46,6 +47,7 @@ export const testGlobalConfig: Config.GlobalConfig = {
     notifyMode: "failure-change",
     onlyChanged: false,
     onlyFailures: false,
+    openHandlesTimeout: 0,
     passWithNoTests: false,
     projects: [],
     reporters: [
@@ -53,7 +55,9 @@ export const testGlobalConfig: Config.GlobalConfig = {
         ["index.js", { "my-custom-options": "ABCD" }]
     ],
     rootDir: "/jest-teamcity",
+    runInBand: false,
     runTestsByPath: false,
+    seed: 0,
     snapshotFormat: {},
     skipFilter: false,
     testFailureExitCode: 1,
