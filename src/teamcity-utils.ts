@@ -7,13 +7,13 @@ export function escapeForTeamCity(stringToEscape: string): string {
     if (!stringToEscape) {
         return "";
     }
-
+    const codepointRegex = new RegExp("\\u(?<codePoint>\\d+)", "g");
     return stringToEscape
         .replace(/\|/g, "||")
         .replace(/\n/g, "|n")
         .replace(/\r/g, "|r")
         .replace(/\[/g, "|[")
         .replace(/\]/g, "|]")
-        .replace(/\u(?<codePoint>\d+)/g, (_s, codePoint) => `|0x${codePoint}`)
+        .replace(codepointRegex, (_s, codePoint) => `|0x${codePoint}`)
         .replace(/'/g, "|'");
 }
