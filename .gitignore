@@ -1,5 +1,14 @@
-yarn-error.log
-
 /.eslintcache
 /dist/
 /node_modules/
+
+# yarn 3 local files
+/.yarn/install-state.gz
+
+# yalc artifacts
+.yalc
+yalc.lock
+
+# output files
+.eslintcache
+*-error.log
