@@ -9,21 +9,21 @@ const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
     baseDirectory: __dirname,
     recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+    allConfig: js.configs.all,
 });
 
 export default [
     {
-        ignores: ["dist/**/*", "node_modules/**/*"]
+        ignores: ["dist/**/*", "node_modules/**/*"],
     },
     ...compat.extends("plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"),
     {
         languageOptions: {
             parser: tsParser,
             ecmaVersion: 2020,
-            sourceType: "module"
+            sourceType: "module",
         },
 
-        rules: {}
-    }
+        rules: {},
+    },
 ];

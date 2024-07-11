@@ -57,7 +57,7 @@ export class TeamCityReporter implements Reporter {
         const testFile = escapeForTeamCity(path.relative(test.context.config.rootDir, test.path));
         console.log(`##teamcity[testSuiteStarted name='${testFile}']`);
 
-        testResult.testResults.forEach(result => {
+        testResult.testResults.forEach((result) => {
             const escapedFullName = escapeForTeamCity(result.fullName);
 
             console.log(`##teamcity[testStarted name='${escapedFullName}']`);
@@ -67,15 +67,21 @@ export class TeamCityReporter implements Reporter {
                     // jest currently doesn't report error messages in a way that fits nicely into TeamCity
                     // (short message, long description). Re-visit the options we have once jest switches to
                     // jest-circus as default test runner in v28 (away from jest-jasmine2).
-                    const escapedFailureMessage = escapeForTeamCity(result.failureMessages.join(";"));
-                    console.log(`##teamcity[testFailed name='${escapedFullName}' message='${escapedFailureMessage}']`);
+                    const escapedFailureMessage = escapeForTeamCity(
+                        result.failureMessages.join(";"),
+                    );
+                    console.log(
+                        `##teamcity[testFailed name='${escapedFullName}' message='${escapedFailureMessage}']`,
+                    );
                     break;
                 case "skipped":
                     console.log(`##teamcity[testIgnored name='${escapedFullName}']`);
                     break;
             }
 
-            console.log(`##teamcity[testFinished name='${escapedFullName}' duration='${result.duration}']`);
+            console.log(
+                `##teamcity[testFinished name='${escapedFullName}' duration='${result.duration}']`,
+            );
         });
 
         console.log(`##teamcity[testSuiteFinished name='${testFile}']`);

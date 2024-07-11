@@ -27,5 +27,5 @@ await esbuild.build({
     outdir: "dist",
     platform: "node",
     sourcemap: true,
-    target: "node16"
+    target: "node16",
 });

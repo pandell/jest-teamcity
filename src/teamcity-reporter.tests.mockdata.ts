@@ -52,7 +52,7 @@ export const testGlobalConfig: Config.GlobalConfig = {
     projects: [],
     reporters: [
         ["default", {}],
-        ["index.js", { "my-custom-options": "ABCD" }]
+        ["index.js", { "my-custom-options": "ABCD" }],
     ],
     rootDir: "/jest-teamcity",
     runInBand: false,
@@ -67,7 +67,7 @@ export const testGlobalConfig: Config.GlobalConfig = {
     useStderr: false,
     watch: false,
     watchAll: false,
-    watchman: true
+    watchman: true,
 };
 
 /**
@@ -76,11 +76,11 @@ export const testGlobalConfig: Config.GlobalConfig = {
 export const mockTest: Test = {
     context: {
         config: {
-            rootDir: "/test-root-dir"
-        }
+            rootDir: "/test-root-dir",
+        },
     } as never,
     duration: 100,
-    path: "/test-root-dir/src/sample-test-file.tests.ts"
+    path: "/test-root-dir/src/sample-test-file.tests.ts",
 };
 
 /**
@@ -95,7 +95,15 @@ export const successTestResultWithoutScope: TestResult = {
     openHandles: [],
     perfStats: { end: 1611158133836, runtime: 687, slow: false, start: 1611158133149 },
     skipped: false,
-    snapshot: { added: 0, fileDeleted: false, matched: 0, unchecked: 0, uncheckedKeys: [], unmatched: 0, updated: 0 },
+    snapshot: {
+        added: 0,
+        fileDeleted: false,
+        matched: 0,
+        unchecked: 0,
+        uncheckedKeys: [],
+        unmatched: 0,
+        updated: 0,
+    },
     testFilePath: "/test-root-dir/src/sample-test-file.tests.ts",
     testResults: [
         {
@@ -107,9 +115,9 @@ export const successTestResultWithoutScope: TestResult = {
             location: null,
             numPassingAsserts: 0,
             status: "passed",
-            title: "a test without a scope"
-        }
-    ]
+            title: "a test without a scope",
+        },
+    ],
 };
 
 /**
@@ -124,7 +132,15 @@ export const mixedTestResult: TestResult = {
     openHandles: [],
     perfStats: { end: 1611158133836, runtime: 687, slow: false, start: 1611158133149 },
     skipped: false,
-    snapshot: { added: 0, fileDeleted: false, matched: 0, unchecked: 0, uncheckedKeys: [], unmatched: 0, updated: 0 },
+    snapshot: {
+        added: 0,
+        fileDeleted: false,
+        matched: 0,
+        unchecked: 0,
+        uncheckedKeys: [],
+        unmatched: 0,
+        updated: 0,
+    },
     testFilePath: "/test-root-dir/src/sample-test-file.tests.ts",
     testResults: [
         {
@@ -136,7 +152,7 @@ export const mixedTestResult: TestResult = {
             location: null,
             numPassingAsserts: 5,
             status: "passed",
-            title: "1 + 2 equals 3"
+            title: "1 + 2 equals 3",
         },
         {
             ancestorTitles: ["scope-2"],
@@ -147,7 +163,7 @@ export const mixedTestResult: TestResult = {
             location: null,
             numPassingAsserts: 5,
             status: "passed",
-            title: "1 + 2 equals 3"
+            title: "1 + 2 equals 3",
         },
         {
             ancestorTitles: ["scope-2"],
@@ -160,15 +176,15 @@ export const mixedTestResult: TestResult = {
                     matcherName: "",
                     message: testFailureMessage,
                     passed: false,
-                    stack: testFailureStackTrace
-                }
+                    stack: testFailureStackTrace,
+                },
             ],
             failureMessages: [testFailureStackTrace],
             fullName: "scope-2 1 + 1 equals 1",
             location: null,
             numPassingAsserts: 0,
             status: "failed",
-            title: "1 + 1 equals 1"
-        }
-    ]
+            title: "1 + 1 equals 1",
+        },
+    ],
 };

@@ -1013,6 +1013,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pandell/jest-teamcity@workspace:."
   dependencies:
+    "@pandell/prettier-config": "npm:^3.0.0"
     "@types/jest": "npm:^29.5.12"
     "@types/node": "npm:^20.14.10"
     "@typescript-eslint/eslint-plugin": "npm:^7.15.0"
@@ -1030,6 +1031,15 @@ __metadata:
     typescript: "npm:^5.5.3"
   languageName: unknown
   linkType: soft
+
+"@pandell/prettier-config@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@pandell/prettier-config@npm:3.0.0"
+  peerDependencies:
+    prettier: ">= 3"
+  checksum: 10c0/ec180fb9efddb5a44e2a563b0c8dddf45af3ddc6f248daff4a59d7477661682018e236d9754bea2cd78713c4e9b884435efff8f7d09878e2aa2a52ebcc0276f7
+  languageName: node
+  linkType: hard
 
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
