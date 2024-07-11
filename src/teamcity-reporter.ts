@@ -1,13 +1,13 @@
-import path from "path";
 import { Reporter, Test } from "@jest/reporters";
 import { TestResult } from "@jest/test-result";
 import { Config } from "@jest/types";
+import path from "path";
+
 import { escapeForTeamCity } from "./teamcity-utils";
 
 /**
  * A Jest reporter class for TeamCity.
  *
- * @implements {Reporter}
  */
 export class TeamCityReporter implements Reporter {
     constructor(public globalConfig: Config.GlobalConfig) {}
@@ -63,7 +63,7 @@ export class TeamCityReporter implements Reporter {
             console.log(`##teamcity[testStarted name='${escapedFullName}']`);
 
             switch (result.status) {
-                case "failed":
+                case "failed": {
                     // jest currently doesn't report error messages in a way that fits nicely into TeamCity
                     // (short message, long description). Re-visit the options we have once jest switches to
                     // jest-circus as default test runner in v28 (away from jest-jasmine2).
@@ -74,6 +74,7 @@ export class TeamCityReporter implements Reporter {
                         `##teamcity[testFailed name='${escapedFullName}' message='${escapedFailureMessage}']`,
                     );
                     break;
+                }
                 case "skipped":
                     console.log(`##teamcity[testIgnored name='${escapedFullName}']`);
                     break;

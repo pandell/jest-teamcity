@@ -1,29 +1,15 @@
-import tsParser from "@typescript-eslint/parser";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+// @ts-check
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all,
-});
+import { createPandellEsLintConfig } from "@pandell/eslint-config";
 
-export default [
-    {
-        ignores: ["dist/**/*", "node_modules/**/*"],
-    },
-    ...compat.extends("plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"),
-    {
-        languageOptions: {
-            parser: tsParser,
-            ecmaVersion: 2020,
-            sourceType: "module",
+export default createPandellEsLintConfig({
+    extraConfigs: [
+        {
+            name: "jest-teamcity/app-local",
+            rules: {
+                "import-x/no-extraneous-dependencies": "off",
+                "no-console": "off",
+            },
         },
-
-        rules: {},
-    },
-];
+    ],
+});

@@ -1,16 +1,17 @@
 import { sep as pathSeparator } from "path";
+
 import { TeamCityReporter } from "./teamcity-reporter";
 import {
-    testGlobalConfig,
+    mixedTestResult,
     mockTest,
     successTestResultWithoutScope,
-    mixedTestResult,
+    testGlobalConfig,
 } from "./teamcity-reporter.tests.mockdata";
 
 /**
  * Jest normalizes filepaths based on the system's path separator.
  *
- * @link https://github.com/facebook/jest/blob/510c8bb40d42095e8a3c78898579b9624e33e432/packages/jest-haste-map/src/lib/normalizePathSep.ts
+ * {@link https://github.com/facebook/jest/blob/510c8bb40d42095e8a3c78898579b9624e33e432/packages/jest-haste-map/src/lib/normalizePathSep.ts}
  */
 function normalizePathSep(filePath: string): string {
     return pathSeparator === "/" ? filePath : filePath.replace(/\//g, pathSeparator);

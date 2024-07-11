@@ -17,8 +17,9 @@ program.parse();
 const options = program.opts();
 
 // bundle function
+// eslint-disable-next-line no-undef
 console.log(`📦 Bundle package (${options.production ? "Production" : "Development"})`);
-await esbuild.build({
+esbuild.build({
     bundle: true,
     entryPoints: ["./src/index.ts"],
     format: "esm",
