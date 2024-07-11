@@ -12,3 +12,4 @@ yalc.lock
 # output files
 .eslintcache
 *-error.log
+*.tsbuildinfo

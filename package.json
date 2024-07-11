@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@pandell/prettier-config": "^3.0.0",
+    "@pandell/typescript-config": "^5.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.10",
     "@typescript-eslint/eslint-plugin": "^7.15.0",

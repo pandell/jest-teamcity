@@ -1,15 +1,9 @@
 {
-  "compileOnSave": false,
+  "extends": "@pandell/typescript-config",
   "compilerOptions": {
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "lib": ["dom", "es2020"],
-    "module": "esnext",
-    "moduleResolution": "node",
     "noEmit": true,
-    "strict": true,
-    "target": "es2020"
+    "strict": true
   },
   "include": ["src/*.ts"],
   "exclude": ["node_modules"]
