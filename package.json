@@ -22,7 +22,7 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && node scripts/build.mjs",
+    "build": "tsc && node tools/build.mjs",
     "build:prod": "run build --production",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
