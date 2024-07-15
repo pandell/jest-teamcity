@@ -1,10 +1,10 @@
 {
   "recommendations": [
-    "DavidAnson.vscode-markdownlint",
+    "davidanson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
-    "EditorConfig.editorconfig",
+    "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "WallabyJs.wallaby-vscode"
+    "wallabyjs.wallaby-vscode"
   ]
 }

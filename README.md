@@ -78,7 +78,7 @@ git push origin v1.2.3
 gh release create v1.2.3
 ```
 
-The new release triggers a new package to be pushed to `npmjs` via GitHub Actions.
+The new release triggers a new package to be pushed to NPM registry via GitHub Actions.
 
 ## Alternatives
 
