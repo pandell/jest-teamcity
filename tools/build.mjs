@@ -16,5 +16,5 @@ esbuild.build({
   outdir: "dist",
   platform: "node",
   sourcemap: true,
-  target: "node20",
+  target: "node18",
 });
