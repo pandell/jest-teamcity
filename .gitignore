@@ -1,15 +1,10 @@
-/.eslintcache
-/dist/
-/node_modules/
+# https://git-scm.com/docs/gitignore
 
-# yarn 3 local files
+# Output and non-source directories/files
 /.yarn/install-state.gz
-
-# yalc artifacts
-.yalc
-yalc.lock
-
-# output files
-.eslintcache
-*-error.log
+/node_modules/
+dist/
+*.local
+*.log
+*.tgz
 *.tsbuildinfo
