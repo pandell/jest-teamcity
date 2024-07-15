@@ -1,32 +1,20 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
-/**
- * @file Bundles `jest-teamcity` using esbuild.
- */
+// Bundle "jest-teamcity" using esbuild.
 
-import { program } from "commander";
 import esbuild from "esbuild";
+import { argv } from "process";
 
-program
-    .name("bundle")
-    .description("CLI to bundle jest-teamcity package")
-    .option("-p, --production", "Whether to run in production mode", false);
+const production = argv.length > 1 && argv[2] === "--production";
 
-program.parse();
-
-const options = program.opts();
-
-// bundle function
-// eslint-disable-next-line no-undef
-console.log(`📦 Bundle package (${options.production ? "Production" : "Development"})`);
+console.log(`📦 Bundle package (${production ? "Production" : "Development"})`); // eslint-disable-line no-undef
 esbuild.build({
     bundle: true,
     entryPoints: ["./src/index.ts"],
     format: "esm",
-    legalComments: "external",
-    minify: options.production,
+    minify: production,
     outdir: "dist",
     platform: "node",
     sourcemap: true,
-    target: "node16",
+    target: "node20",
 });
