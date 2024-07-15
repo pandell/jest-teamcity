@@ -1,6 +1,8 @@
-import { Reporter, Test } from "@jest/reporters";
-import { TestResult } from "@jest/test-result";
-import { Config } from "@jest/types";
+/* eslint-disable no-console */
+
+import type { Reporter, Test } from "@jest/reporters";
+import type { TestResult } from "@jest/test-result";
+import type { Config } from "@jest/types";
 import path from "path";
 
 import { escapeForTeamCity } from "./teamcity-utils";

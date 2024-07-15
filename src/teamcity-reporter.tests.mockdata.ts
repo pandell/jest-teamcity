@@ -1,6 +1,6 @@
-import { Test } from "@jest/reporters";
-import { TestResult } from "@jest/test-result";
-import { Config } from "@jest/types";
+import type { Test } from "@jest/reporters";
+import type { TestResult } from "@jest/test-result";
+import type { Config } from "@jest/types";
 
 const testFailureStackTrace = `Error: expect(received).toBe(expected) // Object.is equality
 
