@@ -2,9 +2,7 @@
   "extends": "@pandell/typescript-config",
   "compilerOptions": {
     "isolatedModules": true,
-    "noEmit": true,
-    "strict": true
+    "noEmit": true
   },
-  "include": ["src/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
