@@ -80,7 +80,7 @@ export const mockTest: Test = {
     },
   } as never,
   duration: 100,
-  path: "/test-root-dir/src/sample-test-file.tests.ts",
+  path: "/test-root-dir/src/sample\\test/file.tests.ts",
 };
 
 /**
@@ -104,7 +104,7 @@ export const successTestResultWithoutScope: TestResult = {
     unmatched: 0,
     updated: 0,
   },
-  testFilePath: "/test-root-dir/src/sample-test-file.tests.ts",
+  testFilePath: "/test-root-dir/src/sample\\test/file.tests.ts",
   testResults: [
     {
       ancestorTitles: [],
@@ -141,7 +141,7 @@ export const mixedTestResult: TestResult = {
     unmatched: 0,
     updated: 0,
   },
-  testFilePath: "/test-root-dir/src/sample-test-file.tests.ts",
+  testFilePath: "/test-root-dir/src/sample\\test/file.tests.ts",
   testResults: [
     {
       ancestorTitles: ["scope-1"],

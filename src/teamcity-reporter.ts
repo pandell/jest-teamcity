@@ -57,7 +57,7 @@ export class TeamCityReporter implements Reporter {
    */
   onTestResult(test: Test, testResult: TestResult): void {
     const testFile = escapeForTeamCity(
-      path.relative(test.context.config.rootDir, test.path).replace("\\", "/"), // report paths using universal "/" separator, not platform-specific one
+      path.relative(test.context.config.rootDir, test.path).replace(/\\/g, "/"), // report paths using universal "/" separator, not platform-specific one
     );
     console.log(`##teamcity[testSuiteStarted name='${testFile}']`);
 
