@@ -56,7 +56,9 @@ export class TeamCityReporter implements Reporter {
    * @see {@link https://www.jetbrains.com/help/teamcity/service-messages.html#Reporting+Tests} on reporting tests in TeamCity.
    */
   onTestResult(test: Test, testResult: TestResult): void {
-    const testFile = escapeForTeamCity(path.relative(test.context.config.rootDir, test.path));
+    const testFile = escapeForTeamCity(
+      path.relative(test.context.config.rootDir, test.path).replace("\\", "/"), // report paths using universal "/" separator, not platform-specific one
+    );
     console.log(`##teamcity[testSuiteStarted name='${testFile}']`);
 
     testResult.testResults.forEach((result) => {
