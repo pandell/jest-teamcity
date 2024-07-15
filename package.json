@@ -27,6 +27,7 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "eslint --max-warnings 0 --cache --cache-location node_modules/.cache/eslint/eslint.cache",
+    "prepack": "run build:prod && node tools/clean-package-json.mjs",
     "test": "jest",
     "verify": "echo '[format]' && run format && echo '[build]' && run build && echo '[lint]' && run lint && echo '[test]' && run test",
     "versions": "echo '[node]' && node --version && echo '\n[yarn]' && yarn --version && echo '\n[prettier]' && prettier --version && echo '\n[eslint]' && eslint --version && echo '\n[tsc]' && tsc --version",
