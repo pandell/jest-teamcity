@@ -21,5 +21,14 @@
   "eslint.validate": ["javascript", "typescript"],
 
   // spell-checking extension settings
-  "cSpell.words": ["esbuild", "maechler", "mockdata", "myget", "npmrc", "pandell", "teamcity"]
+  "cSpell.words": [
+    "esbuild",
+    "maechler",
+    "mockdata",
+    "myget",
+    "npmrc",
+    "outdir",
+    "pandell",
+    "teamcity"
+  ]
 }
