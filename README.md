@@ -64,7 +64,12 @@ To create a new release, you need to do the following steps:
 
 ```sh
 # bump package version (you can also omit the arguments and follow the interactive prompt)
-yarn version --new-version 1.2.3
+git checkout main
+yarn version 1.2.3
+
+# commit and add tag
+git commit --message "v1.2.3"
+git tag --annotate v1.2.3 --message "1.2.3"
 
 # push tag to remote
 git push origin v1.2.3
@@ -73,7 +78,7 @@ git push origin v1.2.3
 gh release create v1.2.3
 ```
 
-The new release triggers a new package to be pushed to `npmjs` via GitHub Actions.
+The new release triggers a new package to be pushed to NPM registry via GitHub Actions.
 
 ## Alternatives
 

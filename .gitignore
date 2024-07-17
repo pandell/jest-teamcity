@@ -1,5 +1,10 @@
-yarn-error.log
+# https://git-scm.com/docs/gitignore
 
-/.eslintcache
-/dist/
+# Output and non-source directories/files
+/.yarn/install-state.gz
 /node_modules/
+dist/
+*.local
+*.log
+*.tgz
+*.tsbuildinfo
