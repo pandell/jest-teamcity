@@ -16,6 +16,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           scope: "@pandell"
       - run: yarn
-      - run: yarn npm publish
+      - run: yarn pack
+      - run: npm publish package.tgz
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_//registry.npmjs.org/:_authToken: ${{ secrets.NPM_TOKEN }}
