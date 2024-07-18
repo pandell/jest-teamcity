@@ -1,7 +1,7 @@
 {
   "name": "@pandell/jest-teamcity",
   "type": "module",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "packageManager": "yarn@4.3.1",
   "description": "Modern Jest Test Result Processor for TeamCity",
   "keywords": [
